@@ -1,20 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
-int cnt=1;
-void printSum(int num, int ans) {
-    ans=ans+cnt;
+long fact=1, cnt=1;
+void printFact(int num) {
+    fact=fact*cnt;
     cnt++;
     if(cnt>num) {
-        cout<<ans;
+        cout<<fact;
         return;
     }
-    printSum(num, ans);
+    printFact(num);
 }
 int main()
 {
-    int num, ans=0;
+    int num;
     cout<<"Enter a number: ";
     cin>>num;
-    printSum(num, ans);
+    printFact(num);
     return 0;
 }
