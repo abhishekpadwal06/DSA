@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-void FinalMerge(vector<int> &arr, int low, int mid, int high) {
+void FinalMerge(int arr[], int low, int mid, int high) {
     int left = low;                 //start point of left half of array
     int right = mid+1;              //start point of right half of array
     vector<int>temp;                //Temporary vector
@@ -24,10 +24,10 @@ void FinalMerge(vector<int> &arr, int low, int mid, int high) {
     }
 
     for(int i=low; i<=high; i++) { 
-        arr[i] = temp[i-low];
+        arr[i] = temp[i - low];
     }
 }
-void mergeSort(vector<int> &arr, int low, int high) {
+void mergeSort(int arr[], int low, int high) {
     //Base Case
     if(low>=high)   return;
     int mid =(low+high)/2;
@@ -37,20 +37,19 @@ void mergeSort(vector<int> &arr, int low, int high) {
 }
 int main()
 {
-    int n, x;
+    int n;
     cout<<"\nEnter array size: ";
     cin>>n;
-    vector<int> arr;                                
+    int arr[n+1];                                
     cout<<"Enter array elements: ";
     for(int i=0; i<n; i++) {
-        cin>>x;
-        arr.push_back(x);
+        cin>>arr[i];
     }
     mergeSort(arr, 0, n-1);
     cout<<"Sorted array is: ";
     for(int i=0; i<n; i++) {
         cout<<arr[i]<<" ";
     }
-    cout<<endl;
+    cout<<" "<<endl;
     return 0;
 }
