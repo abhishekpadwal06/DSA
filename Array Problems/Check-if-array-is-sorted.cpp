@@ -1,15 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 int SortArray(int arr[], int n) {
-    for(int i=1; i<n; i++) {
-        if(arr[i] >= arr[i-1]) {
-
+    int cnt = 0;
+    for(int i=0; i<n; i++) {
+        if(arr[i] >= arr[i+1]) {
+            cnt+=1;         // Array is not sorted
         }
         else {
-            return false;
+            // Array is sorted already
         }
     }
-    return true;
+    return cnt;
 }
 int main() {
     int n;
@@ -22,10 +23,10 @@ int main() {
     }
     int check = SortArray(arr, n);
     if(check == 0) {
-        cout<<"Array is not sorted";
+        cout<<"Array is sorted";
     }
     else {
-        cout<<"Array is sorted";
+        cout<<"Array is not sorted";
     }
     return 0;
 }
