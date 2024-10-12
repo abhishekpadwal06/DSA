@@ -14,8 +14,7 @@ int second_largest(int arr[], int n) {
     }
     return second_largest_no;
 }
-int main()
-{
+int main()  {
     int n;
     cout<<"Enter array size: ";
     cin>>n;
