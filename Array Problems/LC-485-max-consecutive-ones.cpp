@@ -1,14 +1,20 @@
+// https://leetcode.com/problems/max-consecutive-ones/description/
 #include <bits/stdc++.h>
 using namespace std;
 void MaxConsOnes(vector<int>&nums, int n) {
-    int i=0, cnt=0, fcnt=0;
+    int cnt=0, fcnt=cnt;
     for(int i=0; i<n; i++) {
-    if(nums[i]==1) {
-        cnt++;
-    }
-    else {
-        cnt=0;
-    }
+        if(nums[i]==1) {
+            cnt++;
+        }
+        else {
+            cnt=0;
+        }
+        if(cnt > fcnt) {
+            fcnt=cnt;           
+        }
+        // Alternative code for above part: 
+        // fcnt = max(fcnt, cnt);
     }
     cout<<"Maximum number of consecutive ones: "<<fcnt;
 }
