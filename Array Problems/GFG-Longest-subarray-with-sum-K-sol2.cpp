@@ -1,15 +1,14 @@
-
-
+// BRUTE APPROACH - 2
 
 #include <bits/stdc++.h>
 using namespace std;
 
 int getLongestSubarray(vector<int>& arr, long long k) {
-    int n = arr.size(); // size of the array.
+    int n = arr.size();
 
     int len = 0, sum = 0;
-    for (int i = 0; i < n; i++) { // starting index
-        for (int j = i; j < n; j++) { // ending index
+    for (int i = 0; i < n; i++) {
+        for (int j = i; j < n; j++) {
             sum += arr[j];
 
             if (sum == k)

@@ -1,3 +1,5 @@
+// BETTER APPROACH
+
 #include<bits/stdc++.h>
 using namespace std;
 int Longest_Subarray(int arr[], int n, int k) {

@@ -1,17 +1,14 @@
-
-
+// BRUTE APPROACH - 1
 
 #include <bits/stdc++.h>
 using namespace std;
 
 int getLongestSubarray(vector<int>& a, long long k) {
-    int n = a.size(); // size of the array.
+    int n = a.size();
 
     int len = 0;
-    for (int i = 0; i < n; i++) { // starting index
-        for (int j = i; j < n; j++) { // ending index
-            // add all the elements of
-            // subarray = a[i...j]:
+    for (int i = 0; i < n; i++) {
+        for (int j = i; j < n; j++) {
             long long s = 0;
             for (int K = i; K <= j; K++) {
                 s += a[K];
@@ -32,5 +29,3 @@ int main()
     cout << "The length of the longest subarray is: " << len << "\n";
     return 0;
 }
-
-
