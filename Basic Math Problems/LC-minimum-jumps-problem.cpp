@@ -41,19 +41,3 @@ int main()
     }
     return 0;
 }
-
-
-// int *ptr=&arr[0];
-//         jumps=*ptr;
-//         for(int i=1; i<=jumps; i++){
-//             while(cnt<=jumps) {
-//                 ptr++;
-//                 cnt++;
-//             }
-//             cnt=1;
-//             jumps=*ptr;
-//             if(ptr>=&arr[n-1]) {
-//                 return i;
-//                 return 0;
-//             }
-//         }
