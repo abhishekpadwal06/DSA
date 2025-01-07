@@ -4,7 +4,7 @@ vector<int> ArrayLeaders(int arr[], int n) {
     vector <int> vec;
     int maxi = INT_MIN;
     for(int i=n-1; i>=0; i--) {
-        if(arr[i] > maxi) {
+        if(arr[i] >= maxi) {
             vec.push_back(arr[i]);
         }
         maxi = max(maxi, arr[i]);
