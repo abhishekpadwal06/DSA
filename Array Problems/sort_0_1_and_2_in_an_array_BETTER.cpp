@@ -21,7 +21,7 @@ void sortArr(int arr[], int n) {
     for(int i=cnt0; i<(cnt0+cnt1); i++) {
         arr[i] = 1;
     }
-    
+
     for(int i=(cnt0+cnt1); i<n; i++) {
         arr[i] = 2;
     }
