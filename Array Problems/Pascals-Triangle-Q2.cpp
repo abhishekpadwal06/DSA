@@ -32,3 +32,19 @@ int main() {
 
 
 // OPTIMAL
+void NcR(int r, int c) {
+    int ans = 1;
+    for(int i=1; i<=r; i++) {
+        cout<<ans<<" ";
+        ans = ans * (r-i);
+        ans = ans / i;
+    }
+}
+int main() {
+    int r;
+    cout<<"Enter number of rows: ";
+    cin>>r;    
+    int c = r;
+    NcR(r, c);
+    return 0;
+}
