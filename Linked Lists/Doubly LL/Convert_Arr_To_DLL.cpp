@@ -6,12 +6,13 @@ class Node {
     Node* back;
     Node* next;
 
-    Node(int data1, Node* back1, Node* next1) {
+    Node (int data1, Node* back1, Node* next1) {
         data = data1;
         next = next1;
         back = back1;
     }
 };
+
 Node* ConvertArrToDLL(vector<int> arr) {
     int n = arr.size();
     Node* head = new Node(arr[0], nullptr, nullptr);        // Creating a HEAD
@@ -24,6 +25,7 @@ Node* ConvertArrToDLL(vector<int> arr) {
 
     return head;
 }
+
 void printDLL(Node* head) {
     Node* temp = head;
     while(temp != NULL) {
@@ -32,6 +34,7 @@ void printDLL(Node* head) {
     }
     cout<<endl;
 }
+
 int main() {
     vector<int> arr = {8, 3, 5, 1, 2, 4};
     
