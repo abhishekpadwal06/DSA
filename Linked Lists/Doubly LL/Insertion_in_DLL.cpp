@@ -92,11 +92,11 @@ int main() {
     cout<<"Enter element to be inserted: ";
     cin>>val;
 
-    int key;
-    cout<<"Enter the element before which you want the new element to be inserted: ";
-    cin>>key;
+    // int key;
+    // cout<<"Enter the element before which you want the new element to be inserted: ";
+    // cin>>key;
 
-    head = InsertBeforeVal(head, val, key);
+    head = InsertHead(head, val);
 
     printDLL(head);
     

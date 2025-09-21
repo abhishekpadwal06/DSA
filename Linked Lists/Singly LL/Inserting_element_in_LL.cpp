@@ -47,8 +47,8 @@ Node* insertElementAtPos(Node* head, int el, int pos) {
     int count = 1;
     Node* temp = head;
     if(pos==1) {
-        Node* temp = new Node(el);
-        temp->next = head;
+        Node* newElem = new Node(el);
+        newElem->next = head;
         head = temp;
     }
     else {
