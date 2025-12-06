@@ -1,95 +1,93 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-#define MAX 10
+#define MAX 100
 
 class Stack {
     int st[MAX];
-    int top;
-    public: 
-        Stack() {
-            int top = -1;
+    int topElem;
+    public:
+    Stack() {
+        topElem = -1;
+    }
+
+    void push(int x) {
+        if(topElem >= MAX-1) {
+            cout<<"Stack Overflow!"<<endl;
         }
-        void push(int x) {
-            if (top < MAX - 1) {
-                st[++top] = x;
-            } else {
-                cout << "Stack Overflow!\n";
-            }
+        else {
+            st[++topElem] = x;
         }
-    
-        int topelem() {
-            if (top == -1) {
-                cout << "Stack is empty!\n";
-                return -1;
-            }
-            return st[top];
+    }
+
+    void pop() {
+        if(topElem < 0) {
+            cout<<"Stack Underflow!"<<endl;
         }
-    
-        void pop() {
-            if (top == -1) {
-                cout << "Stack is empty!\n";
-            } else {
-                top--;
-            }
+        else{
+            topElem--;
+            cout<<"Element popped Successfully!"<<endl;
         }
-    
-        int size() {
-            return (top + 1);
+    }
+
+    void top() {
+        if(topElem == -1) {
+            cout<<"Stack is empty!"<<endl;
         }
-    
-        void display() {
-            if (top == -1) {
-                cout << "Stack is empty!\n";
-                return;
-            }
-            for (int i = 0; i <= top; i++) {
-                cout << st[i] << " ";
-            }
-            cout << "\n";
+        else {
+            cout<<st[topElem];
         }
+    }
+
+    void size() {
+        if(topElem < -1) {
+            cout<<"Stack is empty!"<<endl;
+        }
+        cout<<"Stack size: "<<(topElem+1);
+    }
+
+    void display() {
+        if(topElem < -1) {
+            cout<<"Stack is empty!"<<endl;
+        }
+        for(int i=0; i<=topElem; i++) {
+            cout<<st[i]<<" ";
+        }
+    }
 }s;
 
 int main() {
-    char choice;
-    int n;
+    int x, choice;
 
-    do {
-        cout << "\n1. Push \n2. Pop \n3. Top \n4. Size \n5. Display \n6. Exit\n";
-        cout << "Enter which operation you want to do: ";
-        cin >> n;
-
-        switch (n) {
-            case 1: {
-                int x;
-                cout << "Enter element to be pushed: ";
-                cin >> x;
+    while(true) {
+        cout<<"\n---------STACK---------\n";
+        cout<<"1. Push\n2. Pop\n3. Top\n4. Size\n5. Display\n6. Exit";
+        cout<<"\nEnter a choice (1-6): ";
+        cin>>choice;
+        switch (choice) {
+            case 1:
+                cout<<"Enter element to push: ";
+                cin>>x;
                 s.push(x);
                 break;
-            }
-            case 2:
+            case 2: 
                 s.pop();
                 break;
-            case 3:
-                cout << "Top element: " << s.topelem() << "\n";
+            case 3: 
+                s.top();
                 break;
             case 4:
-                cout << "Size of stack: " << s.size() << "\n";
+                s.size();
                 break;
             case 5:
-                cout << "Stack elements: ";
                 s.display();
                 break;
             case 6:
-                cout << "Exiting...\n";
+                cout<<"Exiting..."<<endl;
                 return 0;
-            default:
-                cout << "Invalid choice!\n";
+                
+            default: 
+                cout<<"Invalid choice";
         }
-
-        cout << "Do you want to continue?: ";
-        cin >> choice;
-    } while (choice == 'y' || choice == 'Y');
-
-    return 0;
+    }
 }
