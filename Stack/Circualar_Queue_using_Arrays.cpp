@@ -3,12 +3,12 @@ using namespace std;
 #define MAX 5
 class Queue {
     int Q[MAX];
-    int front, rear, currSize;
+    int start, end, currSize;
 
     public:
     Queue() {
-        front = -1;
-        rear = -1;
+        start = -1;
+        end = -1;
         currSize = 0;
     }
 
@@ -16,30 +16,30 @@ class Queue {
         if(currSize == MAX) {
             cout<<"Queue is full!"<<endl;
         }
-        else if(rear == -1) {
-            front = 0;
-            rear = 0;
+        else if(end == -1) {
+            start = 0;
+            end = 0;
         }
         else {
-            rear = (rear + 1) % MAX;
+            end = (end + 1) % MAX;
         }
-        Q[rear] = x;
+        Q[end] = x;
         currSize++;
     }
 
     void dequeue() {
-        if(front == -1) {
+        if(start == -1) {
             cout<<"Queue is empty!"<<endl;
             return;
         }
-        int popped = Q[front];              // saving the element to be popped
+        int popped = Q[start];              // saving the element to be popped
         if(currSize == 1) {
-            front = -1;
-            rear = -1;
+            start = -1;
+            end = -1;
         }
         else {
             // Circular Queue implementation
-            front = (front + 1) % MAX;
+            start = (start + 1) % MAX;
         }
         currSize--;
     }
@@ -52,10 +52,10 @@ class Queue {
         
         cout<<"Circular Queue elements: ";
 
-        int i = front;
+        int i = start;
         while(true) {
             cout<<Q[i]<<" ";
-            if(i==rear) {
+            if(i==end) {
                 break;
             }
             i = (i + 1) % MAX;

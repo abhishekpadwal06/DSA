@@ -4,12 +4,12 @@ using namespace std;
 
 class Queue {
     int Q[MAX];
-    int front, rear, currSize;
+    int start, end, currSize;
 
     public:
     Queue() {
-        front = -1;
-        rear = -1;
+        start = -1;
+        end = -1;
         currSize = 0;
     }
 
@@ -22,7 +22,7 @@ class Queue {
     }
 
     void display() {
-
+        
     }
 }q;
 
@@ -30,7 +30,7 @@ int main() {
     int x, choice;
 
     while(true) {
-        cout<<"\n---------STACK---------\n";
+        cout<<"\n---------Queue (Arrays)---------\n";
         cout<<"1. Enqueue\n2. Dequeue\n3. Display\n4. End\n";
         cout<<"\nEnter a choice (1-6): ";
         cin>>choice;
