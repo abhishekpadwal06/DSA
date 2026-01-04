@@ -13,5 +13,6 @@ int main()
         fact *= i;
     }
     cout<<"Factorial: "<<fact;
+    cout<<endl;
     return 0;
 }
